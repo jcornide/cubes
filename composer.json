@@ -1,0 +1,14 @@
+{
+    "name": "jcornide/cubes",
+    "description": "Cubes collision",
+    "type": "project",
+    "license": "public",
+    "require": {
+        "php": "^7.4.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

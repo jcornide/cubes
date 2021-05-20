@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+use App\Entity\Cube;
+use App\Service\Room;
+
+require './vendor/autoload.php';
+
+echo "First cube\n";
+$cubeX = readline('X position: ');
+$cubeY = readline('Y position: ');
+$cubeZ = readline('Z position: ');
+$cubeSize = readline('Size: ');
+$cubeA = new Cube($cubeX,$cubeY, $cubeZ, $cubeSize);
+
+echo "Second cube\n";
+$cubeX = readline('X position: ');
+$cubeY = readline('Y position: ');
+$cubeZ = readline('Z position: ');
+$cubeSize = readline('Size: ');
+$cubeB = new Cube($cubeX,$cubeY, $cubeZ, $cubeSize);
+
+$room = new Room($cubeA, $cubeB);
+
+if ($room->areCubesColliding()) {
+    echo "The cubes are colliding and the intersected volume is " . $room->getIntersectedVolume();
+} else {
+    echo "The cubes are not colliding";
+}
